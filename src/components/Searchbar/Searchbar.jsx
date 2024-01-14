@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import s from './Searchbar.module.css';
 
 export class Searchbar extends Component {
   constructor(props) {
@@ -23,10 +24,13 @@ export class Searchbar extends Component {
 
   render() {
     return (
-      <header className="searchbar">
-        <form className="form" onSubmit={this.handleFindEvent}>
+      <header className={s.searchbar}>
+        <form className={s.searchForm} onSubmit={this.handleFindEvent}>
+          <button type="submit" className={s.searchFormButton}>
+            Search
+          </button>
           <input
-            className="input"
+            className={s.searchFormInput}
             type="text"
             autoComplete="off"
             placeholder="Search images and photos"
@@ -34,9 +38,6 @@ export class Searchbar extends Component {
             autoFocus
             onChange={this.handleChangeEvent}
           />
-          <button type="submit" className="button">
-            <span className="button-label">Search</span>
-          </button>
         </form>
       </header>
     );

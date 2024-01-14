@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { getAllPhotos } from 'Servises/Servises';
+import s from './App.module.css';
 
 export class App extends Component {
   state = {
@@ -42,11 +43,11 @@ export class App extends Component {
     const { images } = this.state;
 
     return (
-      <>
+      <div className={s.App}>
         <Searchbar handleGetQuery={this.handleGetQuery} />
 
         {images.length > 0 && <ImageGallery images={images} />}
-      </>
+      </div>
     );
   }
 }

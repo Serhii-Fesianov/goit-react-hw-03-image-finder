@@ -47,3 +47,7 @@ html {
 *::after {
   box-sizing: inherit;
 }
+
+header {
+  width: 100%;
+}

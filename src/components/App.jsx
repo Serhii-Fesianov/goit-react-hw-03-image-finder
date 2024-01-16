@@ -58,12 +58,6 @@ export class App extends Component {
     this.setState({ largeImageURL });
   };
 
-  handleClickBackdrop = event => {
-    if (event.target === event.currentTarget) {
-      this.setState({ largeImageURL: '' });
-    }
-  };
-
   render() {
     const { images, isLoading } = this.state;
 
@@ -84,8 +78,7 @@ export class App extends Component {
         {this.state.largeImageURL && (
           <Modal
             largeImageURL={this.state.largeImageURL}
-            handleClickImage={this.handleClickImage}
-            handleClickBackdrop={this.handleClickBackdrop}
+            closeModal={this.handleClickImage}
           />
         )}
       </div>
